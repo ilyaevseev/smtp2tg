@@ -1,0 +1,13 @@
+[Unit]
+Description=SMTP to Telegram Gateway
+Documentation=https://cdnnow.ru/blog/smtp2tg
+After=nss-lookup.target
+After=network.target
+
+[Service]
+User=smtp2tg
+EnvironmentFile=-/etc/default/smtp2tg.ini
+ExecStart=/usr/local/bin/smtp2tg.py
+
+[Install]
+WantedBy=multi-user.target
